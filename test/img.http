@@ -1,0 +1,20 @@
+@host = http://localhost:5000
+
+
+# ec865f8b54bd130ad61e1bd8c53d6946 8e3185cb9206a7b4cfafd496306bc581
+# cad769f37b231de2ebfe6c1a0e9d5e38 17fd3da4f11f4f5fa1c660a109982743
+
+### Get the Single image
+GET {{host}}/upload/ec865f8b54bd130ad61e1bd8c53d6946
+
+
+### post img
+POST {{host}}/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="files"; filename="web4.jpeg"
+Content-Type: image/jpeg
+
+< ./web4.jpeg
+------WebKitFormBoundary--

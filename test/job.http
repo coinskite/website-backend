@@ -1,0 +1,62 @@
+@host = http://localhost:5000/job
+
+# @host = https://coinskite-web-backend.onrender.com/job
+
+
+### get 
+GET {{host}}/category
+
+
+### get all jobs
+GET {{host}}
+
+
+### get ids of jobs
+GET {{host}}/ids
+
+
+### get 
+GET {{host}}/6210eaf548537d43dc17d01e
+
+
+### post a category
+POST {{host}}/category
+Content-Type: application/json
+
+{
+  "name" : "UI / UX"
+}
+
+
+### post a job
+POST {{host}}
+Content-Type: application/json
+
+{
+  "category" : "Develpoer",
+  "title" : "React Develpoer",
+  "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum soluta tempore animi itaque quibusdam. Dolorum eos assumenda facilis dolorem aliquid. Natus cum minima sapiente? Ex saepe officiis possimus in architecto.",
+  "location" : "Remote",
+  "workType" : "Full Time",
+  "points" : [
+    {
+      "heading" : "What we expect from you?",
+      "list" : [
+        "You have to know basic ui devlopment flow",
+        "Must have creative thiking",
+        "Can create accurate pages"
+      ]
+    },
+    {
+      "heading" : "What we provide?",
+      "list" : [
+        "You can work with world class developers",
+        "We will offer competative salary"
+      ]
+    }
+  ]
+}
+
+
+### 
+DELETE {{host}}/6210ea37dc655c4304828fa1

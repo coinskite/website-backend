@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 const applicationRoutes = require('./routes/application')
+const commodityRoutes = require('./routes/commodity')
 const blogRoutes = require('./routes/blog')
 const imgRoutes = require('./routes/img')
 const jobRoutes = require('./routes/job')
@@ -24,6 +25,7 @@ app.use('/job', jobRoutes)
 app.use('/blog', blogRoutes)
 app.use('/upload', imgRoutes)
 app.use("/application", applicationRoutes)
+app.use("/commodities", commodityRoutes)
 
 app.use((req, res, next) => {
   const error = new Error('Not Found')

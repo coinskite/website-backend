@@ -1,13 +1,13 @@
-let mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-let Category = mongoose.model('Category', {
+const Category = mongoose.model('Category', {
   name: {
     type: String,
     required: true
   }
 })
 
-let Job = mongoose.model('Job', {
+const Job = mongoose.model('Job', {
   category: {
     type: String,
     required: true

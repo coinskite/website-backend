@@ -1,0 +1,42 @@
+@host = https://coinskiteblog.herokuapp.com/blog
+
+# @host = http://localhost:5000/blog
+
+### get 
+GET {{host}}/All
+
+
+### getLatest
+GET {{host}}/getLatest
+
+
+### post
+POST {{host}}
+Content-Type: application/json
+
+{
+  "category" : "Guides",
+  "title" : "Learn Javascript",
+  "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum soluta tempore animi itaque quibusdam. Dolorum eos assumenda facilis dolorem aliquid. Natus cum minima sapiente? Ex saepe officiis possimus in architecto.",
+  "img" : {
+    "fileName" : "8e3185cb9206a7b4cfafd496306bc581",
+    "fileType" : "image/jpeg"
+  }
+}
+
+
+### put
+PUT {{host}}
+Content-Type: application/json
+
+{
+  "_id" : "61c6fd1b857c0547c8cc1f72",
+    "img" : {
+    "fileName" : "8e3185cb9206a7b4cfafd496306bc581",
+    "fileType" : "image/jpeg"
+  }
+}
+
+
+### delete
+DELETE {{host}}/61c675c5495f05375ce99c0d

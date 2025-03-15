@@ -1,0 +1,32 @@
+@host = http://localhost:5000/application
+
+### 
+POST {{host}}/send
+Content-Type: application/json
+
+{
+  "firstName": "",
+  "lastName": "",
+  "email" : "glrajv369@gmail.com",
+  "mobile": "",
+  "current_CTC": "",
+  "expected_CTC": "",
+  "noticePeriod": "",
+  "coverLetter": "",
+  "file" : {
+    "filename": "1.png",
+    "path": "upload\\1.png"
+  }
+}
+
+
+### 
+POST {{host}}/resume
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="resume"; filename="1.png"
+Content-Type: image/png
+
+< ./1.png
+------WebKitFormBoundary--

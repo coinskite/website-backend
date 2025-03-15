@@ -1,6 +1,6 @@
-let mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-let Blog = mongoose.model('Blog', {
+const Blog = mongoose.model('Blog', {
   category: {
     type: String,
     required: true

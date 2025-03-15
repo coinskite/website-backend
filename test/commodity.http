@@ -1,0 +1,70 @@
+@host = http://localhost:5000/commodities
+
+
+### Get all commodities (with optional filters)
+GET {{host}}
+
+
+### Get commodities filtered by state and district
+GET {{host}}?district=Madurai
+
+
+### Get commodity by ID (replace with actual ID)
+GET {{host}}/65f8a7a4b28d5e32bcdf
+
+
+### Create a single commodity
+POST {{host}}
+Content-Type: application/json
+
+{
+  "commodity": "Paddy",
+  "variety": "Hybrid",
+  "arrivalDate": "2024-06-18",
+  "state": "Tamil Nadu",
+  "district": "Madurai",
+  "market": "Madurai",
+  "maxPrice": 4000,
+  "avgPrice": 3800,
+  "minPrice": 3600
+}
+
+
+### Bulk upload JSON file (modify the file path)
+POST {{host}}/bulk
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="data.json"
+
+< ./data.json
+
+
+### Bulk upload CSV file (modify the file path)
+POST {{host}}/bulk
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="data.csv"
+
+< ./data.csv
+
+
+### Bulk upload Excel file (modify the file path)
+POST {{host}}/bulk
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="data.xlsx"
+
+< ./data.xlsx
+
+
+### Update a commodity (replace with actual ID)
+PUT {{host}}/67d5608384d1382524c0432d
+Content-Type: application/json
+
+{
+  "maxPrice": 2300,
+  "avgPrice": 2250,
+  "minPrice": 2200
+}
+
+
+### Delete a commodity (replace with actual ID)
+DELETE {{host}}/67d5608384d1382524c0432d
+

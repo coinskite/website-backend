@@ -16,6 +16,10 @@ const blogRoutes = require('./routes/blog')
 const imgRoutes = require('./routes/img')
 const jobRoutes = require('./routes/job')
 
+app.get('/health', (req, res) => {
+  return res.json({ message: "ok" })
+})
+
 app.use('/job', jobRoutes)
 app.use('/blog', blogRoutes)
 app.use('/upload', imgRoutes)
